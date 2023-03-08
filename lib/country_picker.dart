@@ -22,7 +22,7 @@ class _CountryPickerState extends State<CountryPicker> {
   TextEditingController controller = TextEditingController();
   LocationRepository repository = LocationRepository();
 
-  void _loadCountryCode() async {
+  void _loadCountryInfo() async {
     var countryCode = await repository.getCountryCode();
     var countryName = await repository.getCountryName();
     var phoneCode = await repository.getNumberCode(countryName);
@@ -35,7 +35,7 @@ class _CountryPickerState extends State<CountryPicker> {
   @override
   void initState() {
     super.initState();
-    _loadCountryCode();
+    _loadCountryInfo();
   }
 
   @override
